@@ -22,9 +22,9 @@ const SwaggerDocument = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'REST API for DaycareSOS',
+      title: 'REST API for',
       version: '1.0.0',
-      description: 'This is the REST API for DaycareSOS',
+      description: 'This is the REST API for',
     },
     host: `${SWAGGER_URL}`,
     basePath: '/',
