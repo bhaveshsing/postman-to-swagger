@@ -1,6 +1,6 @@
 # postman-to-swagger
 
-1. Clone repo postman-to-swagger.
+1. Clone repo.
 2. Run npm install.
 3. Run Server using “npm start”.
 4. Go to the postman, export the collection which you need to convert in swagger.
