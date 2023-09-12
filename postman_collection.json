@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "4f0acd06-c193-4fb0-9009-de32dabbf580",
+		"name": "Define",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20270511"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"signupType\":\"google\",\"code\":\"4/0Adeu5BVmpgWM5BteEIJ_j8ckIennOG_X69FLjHuQuysRoJA3RnOSJmFSBbtTru3jIMMxow\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"create"
+					],
+					"query": [
+						{
+							"key": "signupType",
+							"value": "google",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "mb.bhardwaj@studiographene.com",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "ggaskhkasdhkasd",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?q=10%26h=200",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateAuthUrl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/auth/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBasicProfile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Mohit Bhardwaj\",\"colorId\":\"64e6f85976104cf02349e698\",\"avatarId\":\"64e619400707b4d8ada0540b\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user/update-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getavatar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3003/profile/getavatar",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"profile",
+						"getavatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "savecolor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\"color_code\":\"#33D7FF\"},{\"color_code\":\"#33FF33\"},{\"color_code\":\"#33D7FF\"},{\"color_code\":\"#33FF33\"}\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/profile/savecolor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"profile",
+						"savecolor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveavatar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"/Users/mohitbhardwaj/Downloads/dsadsad.jpeg",
+								"/Users/mohitbhardwaj/Downloads/ppit.jpeg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3003/profile/saveavatar",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"profile",
+						"saveavatar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

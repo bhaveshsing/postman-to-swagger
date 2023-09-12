@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  title: Define
+  version: 1.0.0
+servers:
+  - url: http://localhost:3003
+  - url: localhost://
+paths:
+  /user/create:
+    post:
+      tags:
+        - General
+      summary: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                signupType: google
+                code: >-
+                  4/0Adeu5BVmpgWM5BteEIJ_j8ckIennOG_X69FLjHuQuysRoJA3RnOSJmFSBbtTru3jIMMxow
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/google:
+    get:
+      tags:
+        - General
+      summary: GenerateAuthUrl
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/update-profile:
+    put:
+      tags:
+        - General
+      summary: updateBasicProfile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Mohit Bhardwaj
+                colorId: 64e6f85976104cf02349e698
+                avatarId: 64e619400707b4d8ada0540b
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: '{{token}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /003/profile/getavatar:
+    get:
+      tags:
+        - General
+      summary: getavatar
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /profile/savecolor:
+    post:
+      tags:
+        - General
+      summary: savecolor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                - color_code: '#33D7FF'
+                - color_code: '#33FF33'
+                - color_code: '#33D7FF'
+                - color_code: '#33FF33'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /003/profile/saveavatar:
+    post:
+      tags:
+        - General
+      summary: saveavatar
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
